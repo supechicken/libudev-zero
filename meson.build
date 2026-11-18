@@ -62,6 +62,11 @@ libudev = library(
     install: true,
 )
 
+dep_libudev = declare_dependency(
+    include_directories: include_directories('.'),
+    link_with: libudev,
+)
+
 install_headers(
     configure_file(
         input: 'udev.h',
